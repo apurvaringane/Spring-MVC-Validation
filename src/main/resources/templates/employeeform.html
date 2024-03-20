@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring MVC Validation</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+
+<div class="container">
+  <div class="row mb-3">
+    <h1 class="text-center">EMPLOYEE INFORMATION</h1>
+  </div>
+
+  <div class="mb-3">
+    <form method="post" th:action="@{/addemployee}" th:object="${employee}">
+      <div class="mb-3">
+        <label>ENTER EMPLOYEE ID</label>
+        <input type="text" class="form-control" th:field="*{empId}"/>
+        <p style="color:red" th:errors="*{empId}"></p>
+      </div>
+
+      <div class="mb-3">
+        <label>ENTER FIRST NAME</label>
+        <input type="text" class="form-control" th:field="*{firstName}"/>
+        <p style="color:red" th:errors="*{firstName}"></p>
+      </div>
+
+      <div class="mb-3">
+        <label>ENTER LAST NAME</label>
+        <input type="text" class="form-control" th:field="*{lastName}"/>
+        <p style="color:red" th:errors="*{lastName}"></p>
+      </div>
+
+      <div class="mb-3">
+        <label>ENTER JOIN DATE</label>
+        <input type="date" class="form-control" th:field="*{joinDate}"/>
+        <p style="color:red" th:errors="*{joinDate}"></p>
+      </div>
+
+      <div class="mb-3">
+        <label>ENTER SALARY</label>
+        <input type="text" class="form-control" th:field="*{salary}"/>
+                <p style="color:red" th:errors="*{salary}"></p>
+      </div>
+
+
+      <div class="mb-3">
+        <center> <input type="submit" class="btn btn-danger" value="Add Employee"></center>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+
+</body>
+</html>
